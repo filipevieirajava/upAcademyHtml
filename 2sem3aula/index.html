@@ -9,8 +9,17 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <p>
-        
-    </p>
+    <p id="$1"  > </p>
+    <button  id="but1" onclick="escreve()" >click</button>
+    <input type="text" id="inp">
+<script>
+function tocelcius(f) {
+    return(5/9) * (f-32);  
+};
+function escreve(){ 
+    document.getElementById("$1").innerHTML=tocelcius(getElementById("inp").innerHTML)
+}
+</script>
+
 </body>
 </html>
