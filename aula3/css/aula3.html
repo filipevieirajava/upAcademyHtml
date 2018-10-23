@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="teste.css">
+</head>
+
+
+<body>
+    <form action="">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 border">
+                    <!-- This content will take up 3/12 (or 1/4) of the container -->
+                    <label for="first name">first name</label>
+                    <input type="text" required name="first name" maxlength="2" placeholder="inserir nome">
+                    <label for="last name">last name</label>
+                    <input type="text" name="last name" placeholder="inserir sobrenome">
+                    <br>
+                </div>
+                <div class="col-3 border" >
+                    <!-- This content will take up 3/12 (or 1/4) of the container -->
+                    <br> <label for="email">email</label>
+                    <input type="email" required name="email" placeholder="inserir email">
+                    <br>
+                    <br><label for="password">password</label><input type="password" required minlength="4" maxlength="5"
+                        placeholder="pass">
+                    <input type="password" required minlength="4" maxlength="5" placeholder="confirm pass">
+                    <br>
+
+                </div>
+                <div class="col-6 border">
+                    <!-- This content will take up 6/12 (or 1/2) of the container -->
+                    <br>
+                    <br>
+
+                    <br>
+                    <select>
+                        <option value="benfas">benfas</option>
+                        <option value="sbordeng">sbordeng</option>
+                        <option value="puorto">puorto</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input id="check" type="checkbox" required>
+                    <label for="check">aceito termos e condicoes </label>
+                    <br><button type="submit">enviar</button>
+                </div>
+            </div>
+        </div>
+
+</body>

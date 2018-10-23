@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>aula4</title>
+    <link rel="icon" href="/Users/alunotarde/Desktop/img.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+
+</head>
+
+<body>
+
+    <p id="demo">
+        bom dia
+    </p>
+
+    <script>
+
+        console.log("öla");
+
+        var hora = new Date().getDate();
+        console.log(hora)
+        if (hora > 20 & hora < 6) {
+            console.log("hora > 20");
+            document.getElementById("demo").innerHTML = "heboa noite";
+        } else if (hora > 13) {
+            document.getElementById("demo").innerHTML = "boa tarde";
+        }
+        if (hora < 13) {
+            document.getElementById("demo").innerHTML = "bom dia";}
+        
+        document.getElementById("demo").innerHTML = "hello";
+
+// var dia = new Date().getDay();
+
+// switch (dia){
+
+// case 0: document.getElementById("demo").innerHTML = "domingo";
+// break;
+// case 1: document.getElementById("demo").innerHTML = "segunda";
+// break;
+// case 2: document.getElementById("demo").innerHTML = "terca";
+// break;
+// case 3: document.getElementById("demo").innerHTML = "quarta";
+// break;
+// case 4: document.getElementById("demo").innerHTML = "quinta";
+// break;
+// case 5: document.getElementById("demo").innerHTML = "sexta";
+// break;
+// case 6: document.getElementById("demo").innerHTML = "sabado";
+// break;
+// default:  document.getElementById("demo").innerHTML = "erro";
+// break;
+
+
+// }
+
+// var text="";
+// for (let index = 0; index < 1040000; index++) {
+//    text += "numero : " +index + "<br>";
+// //    if (index ===100) {break};
+
+//  if(index ===15 ) {continue}
+
+
+// }
+
+// var txt="";
+// var person = [ "john", "Doe", "35"];
+// var x;
+// for (x in person) {
+//     txt +=
+// }
+
+
+var txt=""
+var index = 0
+while (index<10) {
+
+txt+= "numro ; " + index +"<br>"; 
+    index++;
+}
+
+console.log("aqui");
+document.getElementById("demo").innerHTML = txt;
+
+    </script>
+
+</body>
+
+</html>

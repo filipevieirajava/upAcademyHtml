@@ -1,0 +1,57 @@
+@media screen and 
+(min-width: 576px) {
+    
+   body{ background-color: rgb(149, 198, 243);
+    font-size: 1cm;
+    font-family: fantasy;
+    text-decoration: blue overline;
+    color: rgb(21, 253, 0);
+    text-shadow: -0mm 5mm 1mm rgb(241, 241, 241);
+    
+    padding: 1%
+    }
+
+    }
+
+@media screen and (min-width: 768px) {
+    body{ 
+    background-color: rgb(149, 243, 149);
+    font-size: 1cm;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: rgb(255, 17, 0) overline;
+    color: rgb(202, 0, 253);
+    text-shadow: -0mm 5mm 1mm rgb(241, 241, 241);
+    
+    padding: 1%
+    }
+
+    }
+    
+@media screen and (min-width: 992px) {
+    body{ 
+    background-color: rgb(243, 149, 149);
+    font-size: 1cm;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: blue overline;
+    color: rgb(30, 253, 0);
+    text-shadow: -0mm 5mm 1mm rgb(2, 1, 1);
+    
+    padding: 1%
+  
+    }
+    }
+
+@media screen and (min-width: 1200px) {
+    body{ 
+    background-color: rgb(209, 149, 243);
+    font-size: 1cm;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: rgb(208, 255, 0) overline;
+    color: rgb(2, 1, 1);
+    text-shadow: -0mm 5mm 1mm rgb(241, 241, 241);
+    
+    padding: 1%
+   
+    }}
+    
+    
