@@ -7,33 +7,48 @@ function recebe() {
 
     console.log(b);
 
-    document.getElementById('out').innerHTML = b
-
+    document.getElementById('out').innerHTML = b;
+return b
+}
+function get() {
+    var a = document.getElementById('input').value.split('');
+    return a
 }
 
 function sort() {
-    var a = Array.from(
-        document.getElementById('input').value);
+    var a=  recebe();
+    // var a = Array.from(
+    //     document.getElementById('input').value);
     var c = [];
-    // c.push(a[0]);
-    for (let index = 0; index <= a.length; index++) {
+    // var sOrd = true
+    // cenas();
+    // function cenas() {
 
-        if (a[index] > a[index + 1]) {
-            c.push(a[index])
+    for (let i = 0; i < a.length - 1; i++) {
+
+        for (let index = 0; index < a.length - 1; index++) {
+            // var c = ''; // istto é o temp
+
+            if (a[index] < a[index + 1]) {
+                // sOrd == false;
+                c = a[index];
+                a[index] = a[index + 1];
+                a[index + 1] = c;
+                // console.log('if false');
+            }
+
         }
-        else if (a[index] < a[index + 1]) {
-            c.unshift(a[index])
-        } console.log(c)
     }
-    if (a[a.length] < c[c.length]) {
-        c.unshift(a[a.length])
-        console.log(c)
-    } 
-    else if (a[a.length] > c[c.length]) {
-        c.push(a[a.length])
-    }console.log(c)
-    document.getElementById('out2').innerHTML = c
+    // }
+
+    // if (sOrd == true) {
+    //     console.log('if true');
+    document.getElementById('out2').innerHTML = a;
 
 
+    // } else {
+    //     cenas();
 
+    // }
 }
+
