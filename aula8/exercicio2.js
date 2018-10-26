@@ -16,11 +16,11 @@ function desco() {
     var c = [];
     for (let i = 0; i < a.length; i++) {
 
-        for (let index = 0; index < a.length ; index++) {
+        for (let index = 0; index < a.length-1 ; index++) {
 
             c.push(a[index]);
 
-            if (a[index] % 2 == 0 && a[index + 1] % 2 == 0) {
+            if (a[index] % 2 == 0 && a[index +1  ] % 2 == 0) {
                 console.log('primeiro if')
                 // c.push(a[index]);
                 c.push('-');
@@ -30,7 +30,9 @@ function desco() {
             } else
                 if (a[index] % 2 !== 0 &&
                      a[index + 1] % 2 !== 0
-                      && a[index+1]!==undefined) {
+                    //   && a[index+1]!==undefined
+                      )
+                       {
                     console.log('segundo if')
 
                     // c.push(a[index]);
