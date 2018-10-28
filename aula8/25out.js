@@ -8,3 +8,8 @@ function click() {
 
 
 }
+function click1() {
+
+    
+    
+}

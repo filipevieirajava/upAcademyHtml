@@ -16,7 +16,7 @@ function desco() {
     var c = [];
     for (let i = 0; i < a.length; i++) {
 
-        for (let index = 0; index < a.length-1 ; index++) {
+        for (let index = 0; index < a.length ; index++) {
 
             c.push(a[index]);
 
@@ -30,7 +30,7 @@ function desco() {
             } else
                 if (a[index] % 2 !== 0 &&
                      a[index + 1] % 2 !== 0
-                    //   && a[index+1]!==undefined
+                      && a[index+1]!==undefined
                       )
                        {
                     console.log('segundo if')
@@ -40,27 +40,8 @@ function desco() {
                     // c.push(a[index + 1]);
                     console.log('segundo if fim')
                 };
-        // }
-        // c.push(a[index]);
-        // };
-        // if (a[index.length] % 2 == 0 && a[index.length - 1] % 2 == 0) {
-        //     console.log('if ultimo par')
-        //     // c.push(a[index]);
-        //     c.push('-');
-        //     c.push(a[index.length]);
-        //     console.log(' if ultimo par fim')
-        // } else
-        //     if (a[index.length] % 2 !== 0 && a[index.length -1] % 2 !== 0) {
-        //         console.log('if ultimo inpar')
-
-        //         // c.push(a[index]);
-        //         c.push('#');
-        //         c.push(a[index.length]);
-
-        //         // c.push(a[index + 1]);
-        //         console.log('if ultimo impar fim')
-            };
-
+        }
+        
 
         console.log(c);
         return         document.getElementById('out').innerHTML = c;
