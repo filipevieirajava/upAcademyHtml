@@ -73,26 +73,6 @@ function retornaExtra() {
     } return console.log(c, 'quinto');
 
 }
-var nome1 = document.getElementById('nP').innerHTML;
-var pedido1 = document.getElementById('pede').innerHTML;
-var extra1 = document.getElementById('extra').innerHTML;
-
-function fazArray() {
-
-    var nome1 = document.getElementById('nP').innerHTML;
-    var pedido1 = document.getElementById("pede").innerHTML;
-    var extra1 = document.getElementById('extra').innerHTML;
-
-    var c = [];
-
-
-    var pedidoinp = new Object();
-    pedidoinp.id = '1';
-    pedidoinp.nome = nome1;
-    pedidoinp.pInd = pedido1;
-
-    return console.log(pedidoinp)
-}
 // cria objecto chamdo 'Objecto' com keys menu e especial
 
 // vai buscar os inputs ao html
@@ -100,42 +80,80 @@ function fazArray() {
 // var pedido1 = document.getElementById("pede").nodeValue;
 
 
-console.log(pedido1);
+// console.log(pedido1);
 
-var pedido1 = document.getElementById('pede').value;
-console.log(pedido1);
-var extra1 = document.getElementById('extra').nodeValue;
-console.log(extra1);
-var nome1 = document.getElementById('nP').value;
-console.log(nome1);
+var pedido1
+
+pedido1 = document.getElementById('pede').value;
+// console.log(pedido1);
+// var extra1 = document.getElementById('extra').nodeValue;
+// console.log(extra1);
+// var nome1 = document.getElementById('nP').value;
+// console.log(nome1);
 
 // cria objecto com os inputs
-function criaPedido() {
-    var pedido1 = document.getElementById('pede').value;
-console.log(pedido1);
-var extra1 = document.getElementById('extra').value;
-console.log(extra1);
+
+class Pedido {
+    constructor(x) {
+        this.menu = x
+    }
+
+    criaPedido() {
+        this.menu = document.getElementById('pede').value;
+        if (extra1 !== 'EXTRA' && extra1 !== '') {
+            this.especial = document.getElementById('extra').value;
+        }
+        return this
+    }
+    
+}
+function teste() {
+    var x = new Pedido().criaPedido();
+    console.log(x)
+}
+$("#testes").html()
+
+// console.log(pedido1);
+var extra1 =
+    console.log(extra1);
 var nome1 = document.getElementById('nP').value;
 console.log(nome1);
 
-   
-    if (extra1 !== 'EXTRA' && extra1 !== '') {
 
-        function Objecto(x, y) {
-            this.menu = x;
-            this.especial = y;
-        }
-        var pp = new Objecto(pedido1, extra1);
-        return console.log('fim?', pp)
-    }
-    else if (extra1 =='EXTRA'|| extra1 == '') {
-        function Objecto(x) {
-            this.menu = x;
-        }
-        var pp = new Objecto(pedido1);
-        return console.log('fim2?', pp)
-    }
 
+
+
+
+// var pp = new Objecto(pedido1, extra1);
+// return pp, console.log('fim?', pp)
+//     }
+//     else if (extra1 == 'EXTRA' || extra1 == '') {
+//     class Objecto {
+//         constructor(x) {
+//             this.menu = x;
+//         }
+//     }
+//     var pp = new Objecto(pedido1);
+//     return pp, console.log('fim2?', pp)
+// }
+// }
+class factura {
+    constructor(ida, pessoaa, pedidoa) {
+        this.id = ida;
+        this.pessoa = pessoaa;
+        this.pedido = pedidoa;
+    }
+};
+function Factura() {
+
+    var pedido = criaPedido();
+    var idUNi = new Date().getUTCMilliseconds();
+    console.log(idUNi + 'ID UNICO');
+    var nomPessoa = document.getElementById('nP').value;
+    console.log(nomPessoa + 'nome da pessoa');
+    var fac = new factura(idUNi, nomPessoa, pedido);
+    console.log(pedido)
+    return fac, console.log(fac)
 
 
 }
