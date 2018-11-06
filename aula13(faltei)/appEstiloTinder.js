@@ -113,11 +113,12 @@ function naoGosto() {
 };
 
 
-
+// faz a tabela
 $(document).ready(function () {
 
 
-    $("#maketable").click(function () {
+    $("#faztabela").click(function () {
+        $("#ttotal").replaceWith(' <table id="tabela" class="table"> <thead> <tr><th>titulo</th><th>autor</th> <th>categoria</th> <th>likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
         for (let index = 0; index < listaGosto.length; index++) {
             var titulo = listaGosto[index].title;
             var autor = listaGosto[index].autor;
