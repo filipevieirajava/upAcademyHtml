@@ -15,11 +15,11 @@
 
 <body>
     <!------------------ NAVBAR------------------------------- -->
-    <div class="pos-f-t">
+    <div id="1div" class="pos-f-t">
         <div class="collapse container-fluid" id="navbarToggleExternalContent">
             <div class="bg-dark p-4 row">
                 <h4 class="text-white">Pesquisa Avançada</h4> <br> <br>
-                <div> <input id="pfrase" type="text" title=" Pesquisa Por texto"> 
+                <div> <input id="pfrase" type="text" title=" Pesquisa Por texto">
                     <p class="text-white">Pesquisar Por texto</p>
                 </div>
                 <div> <input id="ptitulo" type="text" title=" Pesquisa Por titulo">
@@ -28,23 +28,24 @@
                 <div><input id="pautor" type="text" title=" Pesquisa Por autor">
                     <p class="text-white">Pesquisar Por autor</p>
                 </div>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            <div>
+                <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
+                <div>
                     <button id="faztabela">Lista de Likes</button>
+                    <button id="voltaCard" >Voltar</button>
                 </div>
             </div>
 
-           
+
         </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <button onclick="search()" class="navbar-toggler" type="button" >
-            <span class="navbar-toggler-icon"></span>GO
-        </button>
+        <button onclick="search()" class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>GO </button>
+      
     </nav>
     </div>
     <!-- -----------------------CARD--------------------------------- -->
@@ -102,7 +103,7 @@
     <!-- </div>
     </div> -->
     <!-- ------------CARD-----------------------CARD-----------------CARD---------------------------- -->
-    <div class="card-group bg-light justify-content-center">
+    <div id="card" class="card-group bg-light justify-content-center">
         <div class=" card bg-light col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img id="imagem" class="card-img-top img rounded" src="http://lisbonne-idee.pt/upload4mail/magnolia-portugal/op_91310_torre.jpg"
                 alt="Card image cap">
@@ -146,7 +147,7 @@
 
     <div class="container">
         <div class="table-responsive">
-            <p  id="ttotal"></p>
+            <p id="ttotal"></p>
             <!-- <table id="tabela" class="table">
                 <thead>
                     <tr>
@@ -163,7 +164,7 @@
                     </tr>
                 </tbody>
             </table> -->
-        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -172,7 +173,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="appEstiloTinder.js"></script>>
+    <script src="appEstiloTinder.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 

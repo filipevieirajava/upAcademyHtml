@@ -1,7 +1,7 @@
 // AIzaSyCTniJxaA9qMeiGHf7uc8jdSRqDS1NoKR8
 var x = [];
 var listaGosto = [];
-var listaNaoGosto=[];
+var listaNaoGosto = [];
 var index = 0;
 function getBook() {
 
@@ -95,7 +95,7 @@ function updateHtml(response) {
 };
 function findObjectByKey(array) {
     for (var i = 0; i < array.length; i++) {
-       
+
         if (array[i].title === x[0].title && array[i].autor[0] === x[0].autor[0]) {
             return array[i]
         }
@@ -141,11 +141,24 @@ function naoGosto() {
 };
 
 // faz a tabela
-$(document).ready(function () {
+// $(document).ready(function () {
 
 
-    $("#faztabela").click(function () {
-        $("#ttotal").replaceWith(' <table id="tabela" class="table"> <thead> <tr><th>titulo</th><th>autor</th> <th>categoria</th> <th>likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+//     $("#faztabela").click(function () {
+//         $("#card").replaceWith(' <table id="ttotal" class="table"> <thead> <tr><th>titulo</th><th>autor</th> <th>categoria</th> <th>likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+//         for (let index = 0; index < listaGosto.length; index++) {
+//             var titulo = listaGosto[index].title;
+//             var autor = listaGosto[index].autor;
+//             var categoria = listaGosto[index].cat;
+//             var like = listaGosto[index].like
+//             $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
+//         }
+//     })
+// });
+$(document).ready(function(){
+    $("#faztabela").click(function(){
+        $("#card").hide();
+        $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>titulo</th><th>autor</th> <th>categoria</th> <th>likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
         for (let index = 0; index < listaGosto.length; index++) {
             var titulo = listaGosto[index].title;
             var autor = listaGosto[index].autor;
@@ -153,5 +166,9 @@ $(document).ready(function () {
             var like = listaGosto[index].like
             $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
         }
-    })
-})
+    });
+    $("#voltaCard").click(function(){
+        $(".table").remove();
+        $("#card").show();
+    });
+});
