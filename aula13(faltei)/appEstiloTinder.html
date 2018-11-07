@@ -7,13 +7,14 @@
     <title>Book Tinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="C:\Users\filip\Desktop\GIT\aula13(faltei)\tinder.css">
 
 
 
 </head>
 
-<body>
+<body >
+    
     <!------------------ NAVBAR------------------------------- -->
     <div id="1div" class="pos-f-t">
         <div class="collapse container-fluid" id="navbarToggleExternalContent">
@@ -31,7 +32,8 @@
                 <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
                 <div>
                     <button id="faztabela">Lista de Likes</button>
-                    <button id="voltaCard" >Voltar</button>
+                    <button id="faztabela2">Lista de DisLikes</button>
+                    <button id="voltaCard">Voltar</button>
                 </div>
             </div>
 
@@ -45,103 +47,36 @@
         </button>
         <button onclick="search()" class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>GO </button>
-      
+
     </nav>
     </div>
-    <!-- -----------------------CARD--------------------------------- -->
-    <!-- <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                <div class="thumbnail">
-                    <img id="imagem" height="50%" width="50%" class="img-responsive img rounded" src="http://lisbonne-idee.pt/upload4mail/magnolia-portugal/op_91310_torre.jpg"
-                        alt="" style="width:100%">
-                        <strong><u> <h1 id="titulo" class="text-center">Torre de Belém</h1></u></strong>
-                    <div height="50%" width="50%" class="caption">
-                        <p id="desc">A Torre de Belém localiza-se na freguesia de Belém, concelho e distrito de Lisboa, em Portugal. Na margem direita do rio Tejo, onde existiu outrora a praia de Belém, era primitivamente cercada pelas águas em todo o seu perímetro. Ao longo dos séculos foi envolvida pela praia, até se incorporar hoje a terra firme.</p>
-                    </div>
-                    <button type="button" onclick="gosto()" class="btn btn-primary btn-lg">Gosto</button>
-                    <button type="button" onclick="naoGosto()" class="btn btn-danger btn-lg float-right">Não Gosto</button>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
+   
+    <!-- ------------CARD-----------------------CARD-----------------CARD---------------------------- -->
+    <div  class="d-flex justify-content-center bg-light col-lg-4 col-md-6 col-sm-6 col-xl-4 "  >
+
+       
+        <div id="card" class="flip-card w-100" style="object-fit:fill" >
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img width=" 100%" height="100%" id="imagem" class="card-img-top rounded" src="https://global-uploads.webflow.com/581110f944272e4a11871c01/596d14ac69a19f2cedacff87_59371a0ebcddaf641da440dc_Mercado-da-Ribeira-Dome1.jpg">
                 </div>
-            </div> -->
-    <!-- <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                <div class="thumbnail">
-                    <img class="img-responsive img-rounded" src="https://global-uploads.webflow.com/581110f944272e4a11871c01/596d14ac69a19f2cedacff87_59371a0ebcddaf641da440dc_Mercado-da-Ribeira-Dome1.jpg"
-                        alt="" style="width:100%">
-                    <h1 class="text-center"><strong>Mercado</strong></h1>
-                    <div class="caption">
-                        <p>Lorem ipsum...</p>
-                        <button ><i class="fas fa-heart"></i></button>
-                        <button></button>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
+                <div class="flip-card-back">
+                    <h5 id="titulo" class="card-title">Mercado</h5>
+                    <p width=" 300px" height="400px" id="desc" class="card-text">This card has supporting text below as
+                        a natural lead-in to additional content.</p>
 
                 </div>
-            </div> -->
-    <!-- <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                <div class="thumbnail">
-                    <img class="img-responsive img-rounded" src="https://revistamdc.files.wordpress.com/2013/02/f02-guimaraes-rua-st-antonio-c2a9ce-eaum.jpg"
-                        alt="" style="width:100%">
-                    <h1 class="text-center"><strong>Rua A</strong></h1>
-                    <div class="caption">
-                        <p>Lorem ipsum...</p>
-                    </div>
-                    <button></button>
-                    <button></button>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                </div>
-            </div> -->
-    <!-- </div>
-    </div> -->
-    <!-- ------------CARD-----------------------CARD-----------------CARD---------------------------- -->
-    <div id="card" class="card-group bg-light justify-content-center">
-        <div class=" card bg-light col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <img id="imagem" class="card-img-top img rounded" src="http://lisbonne-idee.pt/upload4mail/magnolia-portugal/op_91310_torre.jpg"
-                alt="Card image cap">
-            <div class="card-body">
-                <button onclick="gosto()" type="button" class="btn btn-primary btn-lg">Gosto</button>
-                <button onclick="naoGosto()" type="button" class="btn btn-danger btn-lg float-right">Não Gosto</button>
-                <h5 id="titulo" class="card-title">Torre de Belém</h5>
-                <p id="desc" class="card-text">A Torre de Belém localiza-se na freguesia de Belém, concelho e distrito
-                    de
-                    Lisboa, em Portugal. Na margem direita do rio Tejo, onde existiu outrora a praia de Belém, era
-                    primitivamente cercada pelas águas em todo o seu perímetro. Ao longo dos séculos foi envolvida pela
-                    praia, até se incorporar hoje a terra firme.</p>
+
 
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer h-25">
+                <br>
+                <button onclick="gosto()" type="button" class="btn btn-primary btn-lg">Gosto</button>
+
+                <button onclick="naoGosto()" type="button" class="btn btn-danger btn-lg float-right">Não Gosto</button>
             </div>
         </div>
-        <!-- <div class="card">
-              <img class="card-img-top img rounded" src="https://global-uploads.webflow.com/581110f944272e4a11871c01/596d14ac69a19f2cedacff87_59371a0ebcddaf641da440dc_Mercado-da-Ribeira-Dome1.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Mercado</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top img rounded" src="https://revistamdc.files.wordpress.com/2013/02/f02-guimaraes-rua-st-antonio-c2a9ce-eaum.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Rua à Toa</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-          </div> -->
+        
         <!-- tabela ---- tabela ----- tabela ----- tabela ----- tabela ------ tabela ----- tabela ------- tabela --- -->
     </div>
 
@@ -164,7 +99,7 @@
                     </tr>
                 </tbody>
             </table> -->
-      </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

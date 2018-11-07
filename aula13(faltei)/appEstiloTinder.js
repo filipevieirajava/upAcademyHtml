@@ -158,7 +158,8 @@ function naoGosto() {
 $(document).ready(function(){
     $("#faztabela").click(function(){
         $("#card").hide();
-        $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>titulo</th><th>autor</th> <th>categoria</th> <th>likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+        $(".table").remove();
+        $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Título</th><th>Autor</th> <th>Categoria</th> <th>Likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
         for (let index = 0; index < listaGosto.length; index++) {
             var titulo = listaGosto[index].title;
             var autor = listaGosto[index].autor;
@@ -172,3 +173,23 @@ $(document).ready(function(){
         $("#card").show();
     });
 });
+$(document).ready(function(){
+    $("#faztabela2").click(function(){
+        $("#card").hide();
+        $(".table").remove();
+        $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Título</th><th>Autor</th> <th>Categoria</th> <th>DisLikes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+        for (let index = 0; index < listaNaoGosto.length; index++) {
+            var titulo = listaNaoGosto[index].title;
+            var autor = listaNaoGosto[index].autor;
+            var categoria = listaNaoGosto[index].cat;
+            var like = listaNaoGosto[index].dislike
+            $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
+        }
+    });
+    $("#voltaCard").click(function(){
+        $(".table").remove();
+        $("#card").show();
+    });
+});
+
+
