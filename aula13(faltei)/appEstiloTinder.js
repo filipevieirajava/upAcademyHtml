@@ -1,6 +1,7 @@
 // AIzaSyCTniJxaA9qMeiGHf7uc8jdSRqDS1NoKR8
 var x = [];
 var listaGosto = [];
+var listaNaoGosto=[];
 var index = 0;
 function getBook() {
 
@@ -45,12 +46,14 @@ function search() {
 }
 
 class Livro {
-    constructor(title, autor, desc, cat) {
+    constructor(title, autor, desc, cat, like, dislike) {
         this.title = title;
         this.autor = autor;
         this.desc = desc;
         // this.img = img;
         this.cat = cat;
+        this.like = like;
+        this.dislike = dislike;
 
     }
 };
@@ -72,7 +75,9 @@ function updateHtml(response) {
         this.desc = response.items[index].volumeInfo.description;
         // this.img = response.items[index].volumeInfo.imageLinks.thumbnail;
         this.cat = response.items[index].volumeInfo.categories;
-        var livro = new Livro(title, autor, desc, cat);
+        this.like = 0;
+        this.dislike = 0;
+        var livro = new Livro(title, autor, desc, cat, like, dislike);
 
         if (response.items[index].volumeInfo.hasOwnProperty('imageLinks') == true) {
             livro.img = response.items[index].volumeInfo.imageLinks.thumbnail;
@@ -88,30 +93,52 @@ function updateHtml(response) {
     // document.getElementById('imagem').innerHTML = x[0].img
     return x
 };
+function findObjectByKey(array) {
+    for (var i = 0; i < array.length; i++) {
+       
+        if (array[i].title === x[0].title && array[i].autor[0] === x[0].autor[0]) {
+            return array[i]
+        }
+    }
+    return null;
+};
+
+
 
 function gosto() {
-    console.log(x);
+    if (findObjectByKey(listaGosto) == null) {
+        console.log('if sim')
+        x[0].like += 1;
+        listaGosto.push(x[0]);
+    } else {
+        findObjectByKey(listaGosto).like += 1
+    };
     x.shift();
     getMoreBooks();
     console.log(x);
     document.getElementById('imagem').src = x[0].img;
     document.getElementById('titulo').innerHTML = x[0].title;
     document.getElementById('desc').innerHTML = x[0].desc;
-    listaGosto.push(x[0]);
-
     console.log(listaGosto)
 };
 
 function naoGosto() {
-    console.log(x);
+    console.log(x[0].dislike)
+    if (findObjectByKey(listaNaoGosto) == null) {
+        console.log('if sim')
+        x[0].dislike += 1;
+        listaNaoGosto.push(x[0]);
+    } else {
+        findObjectByKey(listaNaoGosto).dislike += 1
+    };
     x.shift();
     getMoreBooks();
     console.log(x);
     document.getElementById('imagem').src = x[0].img;
     document.getElementById('titulo').innerHTML = x[0].title;
     document.getElementById('desc').innerHTML = x[0].desc;
+    console.log(listaNaoGosto)
 };
-
 
 // faz a tabela
 $(document).ready(function () {
@@ -123,8 +150,8 @@ $(document).ready(function () {
             var titulo = listaGosto[index].title;
             var autor = listaGosto[index].autor;
             var categoria = listaGosto[index].cat;
-            // var likes=listaGosto[0].like
-            $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td></tr>');
+            var like = listaGosto[index].like
+            $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
         }
     })
 })
