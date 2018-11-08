@@ -13,8 +13,8 @@
 
 </head>
 
-<body >
-    
+<body>
+
     <!------------------ NAVBAR------------------------------- -->
     <div id="1div" class="pos-f-t">
         <div class="collapse container-fluid" id="navbarToggleExternalContent">
@@ -50,17 +50,18 @@
 
     </nav>
     </div>
-   
-    <!-- ------------CARD-----------------------CARD-----------------CARD---------------------------- -->
-    <div  class="d-flex justify-content-center bg-light col-lg-4 col-md-6 col-sm-6 col-xl-4 "  >
 
-       
-        <div id="card" class="flip-card w-100" style="object-fit:fill" >
+    <!-- ------------CARD-----------------------CARD-----------------CARD---------------------------- -->
+    <div class="d-flex justify-content-center bg-light col-lg-4 col-md-6 col-sm-6 col-xl-4 ">
+
+
+        <div id="card" class="flip-card w-100" style="object-fit:fill">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img width=" 100%" height="100%" id="imagem" class="card-img-top rounded" src="https://global-uploads.webflow.com/581110f944272e4a11871c01/596d14ac69a19f2cedacff87_59371a0ebcddaf641da440dc_Mercado-da-Ribeira-Dome1.jpg">
                 </div>
-                <div class="flip-card-back">
+                <div id="img2" class="flipcardback">
+                    <!-- <img width=" 100%" style="  opacity: 0.1 " height="100%" id="imagem2" class="card-img-top rounded  " src="https://global-uploads.webflow.com/581110f944272e4a11871c01/596d14ac69a19f2cedacff87_59371a0ebcddaf641da440dc_Mercado-da-Ribeira-Dome1.jpg"> -->
                     <h5 id="titulo" class="card-title">Mercado</h5>
                     <p width=" 300px" height="400px" id="desc" class="card-text">This card has supporting text below as
                         a natural lead-in to additional content.</p>
@@ -69,21 +70,21 @@
 
 
             </div>
-            <div class="card-footer h-25">
+            <div class="card-footer w-100">
                 <br>
                 <button onclick="gosto()" type="button" class="btn btn-primary btn-lg">Gosto</button>
 
                 <button onclick="naoGosto()" type="button" class="btn btn-danger btn-lg float-right">Não Gosto</button>
             </div>
         </div>
-        
+
         <!-- tabela ---- tabela ----- tabela ----- tabela ----- tabela ------ tabela ----- tabela ------- tabela --- -->
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="table-responsive">
-            <p id="ttotal"></p>
-            <!-- <table id="tabela" class="table">
+            <p id="ttotal"></p> -->
+    <!-- <table id="tabela" class="table">
                 <thead>
                     <tr>
                         <th>titulo</th>
@@ -99,7 +100,7 @@
                     </tr>
                 </tbody>
             </table> -->
-        </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

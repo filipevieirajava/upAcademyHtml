@@ -90,7 +90,13 @@ function updateHtml(response) {
     document.getElementById('imagem').src = x[0].img;
     document.getElementById('titulo').innerHTML = x[0].title;
     document.getElementById('desc').innerHTML = x[0].desc;
-    // document.getElementById('imagem').innerHTML = x[0].img
+    $(document).ready(function () {
+        var div = $('#img2');
+        console.log('esta aqui');
+        div.css('background-image', x[0].img);
+        console.log('esta aqui tb');
+    });
+
     return x
 };
 function findObjectByKey(array) {
@@ -113,12 +119,15 @@ function gosto() {
     } else {
         findObjectByKey(listaGosto).like += 1
     };
+
     x.shift();
     getMoreBooks();
     console.log(x);
     document.getElementById('imagem').src = x[0].img;
+    document.getElementById('img2').style.backgroundImage.src = x[0].img;
     document.getElementById('titulo').innerHTML = x[0].title;
     document.getElementById('desc').innerHTML = x[0].desc;
+
     console.log(listaGosto)
 };
 
@@ -135,8 +144,10 @@ function naoGosto() {
     getMoreBooks();
     console.log(x);
     document.getElementById('imagem').src = x[0].img;
+    // document.getElementById('imagem2').src = x[0].img;
     document.getElementById('titulo').innerHTML = x[0].title;
     document.getElementById('desc').innerHTML = x[0].desc;
+
     console.log(listaNaoGosto)
 };
 
@@ -155,8 +166,8 @@ function naoGosto() {
 //         }
 //     })
 // });
-$(document).ready(function(){
-    $("#faztabela").click(function(){
+$(document).ready(function () {
+    $("#faztabela").click(function () {
         $("#card").hide();
         $(".table").remove();
         $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Título</th><th>Autor</th> <th>Categoria</th> <th>Likes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
@@ -168,13 +179,13 @@ $(document).ready(function(){
             $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
         }
     });
-    $("#voltaCard").click(function(){
+    $("#voltaCard").click(function () {
         $(".table").remove();
         $("#card").show();
     });
 });
-$(document).ready(function(){
-    $("#faztabela2").click(function(){
+$(document).ready(function () {
+    $("#faztabela2").click(function () {
         $("#card").hide();
         $(".table").remove();
         $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Título</th><th>Autor</th> <th>Categoria</th> <th>DisLikes</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
@@ -186,7 +197,7 @@ $(document).ready(function(){
             $("tbody:last-child").append('<tr><td>' + titulo + '</td><td>' + autor + '</td><td>' + categoria + '</td><td>' + like + '</td></tr>');
         }
     });
-    $("#voltaCard").click(function(){
+    $("#voltaCard").click(function () {
         $(".table").remove();
         $("#card").show();
     });
