@@ -86,7 +86,7 @@ function makeShelf(response) {
 function tableShelves() {
     $("#askP").remove();
     $(".table").remove();
-    $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Capacity</th><th>rent Price</th> <th>ID</th> <th>Product ID</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+    $("body:last-child").append(cabShe);
     for (let index = 0; index < shelves.length; index++) {
         this.capacity = shelves[index].capacity;
         this.rentPrice = shelves[index].rentPrice;
@@ -100,7 +100,7 @@ function tableShelves() {
 function tableProducts() {
     $(".table").remove();
     $("#askP").remove();
-    $("body:last-child").append(' <table id="ttotal" class="table"> <thead> <tr><th>Discount Value</th><th>IVA</th> <th>PVP</th> <th>ID</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>');
+    $("body:last-child").append(cabProd);
     for (let index = 0; index < products.length; index++) {
         this.discountValue = products[index].discountValue;
         this.iva = products[index].iva;
@@ -115,37 +115,28 @@ function tableProducts() {
 function askProducts() {
     $(".table").remove();
     $("#askP").remove();
-    $("body:last-child").append('<div id="askP"><input type="number" placeholder="discount" name="discount" id="discount"><br> <input type="number" placeholder="iva" name="iva" id="iva"><br> <input type="number" placeholder="pvp" name="pvp" id="pvp"><br><button onclick="postProduct()" ><strong>POST</strong></button></div>')
+    $("body:last-child").append(askProd)
 };
 function askShelves() {
     $(".table").remove();
     $("#askP").remove();
-    $("body:last-child").append('<div id="askP"><input type="text" placeholder="capacity" name="capacity" id="capacity"><br><input type="number" placeholder="rentPrice" name="rentPrice" id="rentPrice"><br><input type="number" placeholder="id" name="id" id="id"><input type="number" placeholder="productId" name="productId" id="productId"><br><button onclick="postShelf()" ><strong>POST</strong></button></div>')
+    $("body:last-child").append(askShe)
 }
-
+var cabShe = '<table id="ttotal" class="table"> <thead> <tr><th>Capacity</th><th>rent Price</th> <th>ID</th> <th>Product ID</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>';
+var cabProd = '<table id="ttotal" class="table"> <thead> <tr><th>Discount Value</th><th>IVA</th> <th>PVP</th> <th>ID</th> </tr> </thead><tbody> <tr> </tr></tbody> </table>';
+var askShe = '<div id="askP"><input type="text" placeholder="capacity" name="capacity" value="99" id="capacity"><br><input type="number" placeholder="rentPrice" name="rentPrice" value="99" id="rentPrice"><br><input type="number" placeholder="id" name="id" id="id"><input type="number" placeholder="productId" value="99" name="productId" id="productId"><br><button onclick="postShelf()" ><strong>POST</strong></button></div>';
+var askProd = '<div id="askP"><input type="number" placeholder="discount" value="99"  name="discount" id="discount"><br> <input type="number" placeholder="iva" value="99" name="iva" id="iva"><br> <input type="number" placeholder="pvp" value="99" name="pvp" id="pvp"><br><button onclick="postProduct()" ><strong>POST</strong></button></div>';
 // ------------escrever no html----------------// ------------escrever no html----------------// ------------escrever no html----------------// ------------escrever no html----------------
 // --------------fazer post-------------------------// --------------fazer post-------------------------// --------------fazer post-------------------------// --------------fazer post-------------------------
 
-// $.ajax({
-//     url: `https://mcupacademy.herokuapp.com/api/shelves`,
-//     method: 'post',
-//     type: 'application/json',
-//     success: function (response) {
-//         console.log('shelves');
-//         console.log(response);
-//         makeShelf(response);
-//     },
-//     error: function (err) {
-//         console.log(err);
-//     }
-// });
+
 
 function postProduct() {
     var discount = document.getElementById("discount").value;
     var iva = document.getElementById("iva").value;
     var pvp = document.getElementById("pvp").value;
     var id = 0;
-    var posta = new Product(discount, iva, pvp, id);
+    var posta = new Product(discount, iva, pvp);
     console.log(posta);
     $.ajax({
         type: "POST",
@@ -165,6 +156,8 @@ function postProduct() {
     });
 };
 function postShelf() {
+
+
     var capacity = document.getElementById("capacity").value;
     var rentPrice = document.getElementById("rentPrice").value;
     var productId = document.getElementById("productId").value;
@@ -188,35 +181,19 @@ function postShelf() {
         }
 
     });
+};
+function showCrash() {
+    $("#showcrash").append('<button  class="btn btn-danger" onclick="crash()"><strong>CRASH</strong></button>')
+console.log('crash está on')
+}
+function crash() {
+    for (let index = 0; index < 5; index++) {
+        postShelf();
+      
+        crash();
+        
+
+    }
+
 }
 
-// function post() {
-//     var rand = new Date().getMilliseconds();
-//     while (rand % 2 == 0) {
-//         var cenas= '"https://www.youtube.com/watch?v=dQw4w9WgXcQ"'
-//         var pizza= '<a href="javascript:void(0);" onclick="window.location.href='+cenas+'carrega aqui</a>"'
-//         var posta = new Shelf(pizza,2171,61812,0)
-//         console.log('while');
-//         // for (let index = 0; index < shelves.length; index++) {
-
-//         //     console.log('for');
-//         //     console.log(posta)
-//         //     console.log(products)
-//         $.ajax({
-//             type: "POST",
-//             url: `https://mcupacademy.herokuapp.com/api/shelves`,
-//             data: posta,
-//             dataType: 'application/json',
-//             success: function (response) {
-//                 console.log('sucesso');
-//                 console.log(response);
-//             },
-//             error: function (err) {
-//                 console.log(err);
-//                 console.log('sucesso');
-//             }
-
-//         });
-//     }
-
-// }
