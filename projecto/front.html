@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <script src="front.css"></script> -->
-    
-</head>
+
+    <link href="front.css" rel="stylesheet" type="text/css" />
+
+</head> &Phi; &phi; &dagger; &Dagger; &lsquo; ‘
+&rsquo;&sbquo;&ldquo;&rdquo;&bdquo;&dagger;&Dagger;&permil;&lsaquo;&rsaquo;&spades; ♠&clubs;♣&hearts;♥&diams;♦
+&oline;&#8592;&larr;&#8593;&uarr;&#8594;&rarr;&#8595;&darr;&#8598;&nwarr;&#8599;&nearr;&#8601;&swarr;&#8600;&searr;&#9650;&#x25B2;
+&#9652; &#x25B4;&#9654;
+&#x25B6;&#9656;&#x25B8;&#9658;&#x25BA;&#9660;&#x25BC;&#9662;&#x25BE;&#9664;&#x25C0;&#9666;&#x25C2;&#9668;&#x25C4;&#x2122;
+&#222; &THORN;&#223; &#254; &thorn; &#255; &yuml;&Alpha;&alpha; &Beta;&beta; &Gamma; &gamma; &Delta; &delta; &Epsilon;
+&epsilon;&Zeta;&zeta;&Eta;&eta;&Theta;&theta;&Iota;&iota;&Kappa;&kappa; &Lambda; &lambda; &Mu; &mu;&Nu;
+&nu;&Xi;&xi;&Omicron;&omicron; &Pi; &pi;&Rho;&rho;&Sigma;&sigma;&Tau;&tau;&Upsilon;&upsilon;&Phi;&phi;&Chi;&chi;
+&Psi;&psi;&Omega;&omega;&#9679;&#8226;&#8734; &infin;
+
 <body>
-       '<button  href="javascript:void(0);" onclick="window.location.href='https://www.9gag.com'" class="btn btn-danger" >apaga isto</button>' -->
- <iframe src="https://pt.wikipedia.org/wiki/Programa_Ol%C3%A1_Mundo" width="100%" height="100%" frameborder=""></iframe> --> -->
-        <a href="javascript:void(0);" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" >?</a> 
-    <button  class="btn btn-danger" onclick="showCrash()">crash?</button><p id="showcrash"></p>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="shelves-tab" data-toggle="tab" href="#home" onclick="tableShelves()" role="tab" aria-controls="home" aria-selected="true"> <strong> Shelves </strong></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="products-tab" data-toggle="tab" href="#profile" onclick=" tableProducts()" role="tab" aria-controls="profile" aria-selected="false"><strong>Products</strong></a>
-            </li>
-            <!-- <li class="nav-item">
+    <!-- '<button  href="javascript:void(0);" onclick="window.location.href='https://www.9gag.com'" class="btn btn-danger" >apaga isto</button>' -->
+    <!-- <iframe src="https://pt.wikipedia.org/wiki/Programa_Ol%C3%A1_Mundo" width="100%" height="100%" frameborder=""></iframe> -->
+    <!-- <a href="javascript:void(0);" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" >?</a>  -->
+    <button class="btn btn-warning" onclick="showCrash()">crash?</button>
+    <p id="showcrash"></p>
+    <ul class="nav  bg-dark nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item ">
+            <a class="nav-link active" id="shelves-tab" data-toggle="tab" href="#home" onclick="tableShelves()" role="tab"
+                aria-controls="home" aria-selected="true"> <strong> Shelves </strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="products-tab" data-toggle="tab" href="#profile" onclick=" tableProducts()" role="tab"
+                aria-controls="profile" aria-selected="false"><strong>Products</strong></a>
+        </li>
+        <!-- <li class="nav-item">
               <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
             </li> -->
-            <li class="nav-item">
-              <a class="nav-link" id="postProduct-tab" data-toggle="tab" href="#contact" onclick="askProducts()" role="tab" aria-controls="contact" aria-selected="false"> <strong>Post Product</strong></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="postShelf-tab" data-toggle="tab" href="#contact" onclick="askShelves()" role="tab" aria-controls="contact" aria-selected="false"> <strong>Post Shelf</strong></a>
-              </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" id="postProduct-tab" data-toggle="tab" href="#contact" onclick="askProducts()" role="tab"
+                aria-controls="contact" aria-selected="false"> <strong>Post Product</strong></a>
+        </li> -->
+        <!-- <li class="nav-item">
+            <a class="nav-link" id="postShelf-tab" data-toggle="tab" href="#contact" onclick="askShelves()" role="tab"
+                aria-controls="contact" aria-selected="false"> <strong>Post Shelf</strong></a>
+        </li> -->
 
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="shelves-tab">
-              "Shelves" da API
-                <p id=shelves ></p>
-               </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="products-tab">
-                "Products" da API
-                <p id="products" ></p>
-               </div>
-            <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> -->
+    </ul>
+    <div class="tab-content  bg-dark" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="shelves-tab">
 
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="postProduct-tab">Enviar "Product" para a API</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="postShelf-tab">Enviar "Shelf" para a API</div>
-          </div>
 
-<!-- <div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="products-tab">
+
+        </div>
+        <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> -->
+
+        <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="postProduct-tab">Enviar "Product" para
+            a API</div> -->
+        <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="postShelf-tab">Enviar "Shelf" para a
+            API</div> -->
+    </div>
+    <table id="ttotal" class="table">
+        <thead>
+            <tr>
+                <th>Capacity</th>
+                <th>rent Price</th>
+                <th>ID</th>
+                <th>Product ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> </tr>
+        </tbody>
+    </table>
+    <!-- <div>
     <input type="number" placeholder="capacity" name="capacity" id="capacity"><br>
     <input type="number" value="99" placeholder="rentPrice" name="rentPrice" id="rentPrice"><br>
     <input type="number" placeholder="productId" name="productId" id="productId"><br>
     <button onclick="postShelf()" ><strong>POST</strong></button>
 </div> -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -59,11 +89,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script src="front.js"></script>
+    <script src="front.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-        
-       
-       
+
+
+
 </body>
+
 </html>
