@@ -245,7 +245,7 @@ function postShelf() {
     
 
     console.log('postShelf fim')
-    // timedRefresh(1000);
+    timedRefresh(1000);
 };
 // --------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------
 
@@ -330,19 +330,20 @@ function timedRefresh(timeoutPeriod) {
 
 
 var paragrafo = " all work and no play makes jack a dull boy "
-var type = '<p style="color:red; background-color:black;" id="demo"></p><script> var i = 0; var txt = "♠ ♣ ♥ ♦ ♠ ♣ ♥ ♦ ♠ ♣ ♥ ♦ ♠ ♣ ♥ ♦"; var speed = 1000; function typeWriter() { if (i < txt.length) { var o= document.getElementById("demo").innerHTML += txt.charAt(i)}; i++; setTimeout(typeWriter, speed)} typeWriter()</script> '
+var type = '<p style="color:red; background-color:black;" id="demo"></p><script> var i = 0; var txt = "♠ ♣ ♥ ♦"; var speed = 600; function typeWriter() { if (i < txt.length) { var o= document.getElementById("demo").innerHTML += txt.charAt(i)}; i++; setTimeout(typeWriter, speed)} typeWriter()</script> '
 
 // E também as memórias gloriosas Daqueles Reis, que foram dilatando &dagger; A Fé, o Império, e as terras viciosas &dagger; De África e de Ásia andaram devastando; &dagger; E aqueles, que por obras valerosas Se vão da lei da morte libertando; &dagger; Cantando espalharei por toda parte, &dagger; Se a tanto me ajudar o engenho e arte.
 function showCrash() {
     $("#showcrash").append('<button  class="btn btn-danger" onclick="crash(5)"><strong> CRASH </strong></button>'),
         console.log('crash está on'),
-        $("#showcrash").after('<button  href=\"javascript:void(0);\" onclick="window.location.href=\'https://www.9gag.com\'\" class=\"btn btn-danger\" >apaga isto</button>'),
+        $("#showcrash").after('<button  href=\"javascript:void(0);\" onclick="window.location.href=\'https://www.9gag.com\'\" class=\"btn btn-danger\" >break</button>'),
         // $("head").append(csst)
         $("body").prepend('<p id="demo1"></p>'),
         $("body:last-child").prepend(),                                                     
         $("body:last-child").append('<p id="demo1"></p>')
     // document.writeln(type)
-    $("body:last-child").prepend(type)
+    $("body").prepend(type)
+    timedRefresh(5000);
 
 };
 // 'document.write(\'<!DOCTYPE html></head><html><head></head><body><p style="color:red; background-color:black;"id="demo1"></p><script> var i = 0; var txt = " All work and no play makes Jack a dull boy "; var speed = 100; function typeWriter() { if (i < txt.length) {   document.getElementById("demo1").innerHTML += txt.charAt(i); i++; setTimeout(typeWriter, speed); }} typeWriter(); console.log("ALL WORK AND NO PLAY"); function timedRefresh(timeoutPeriod) {setTimeout("location.reload(true);",timeoutPeriod)}window.onload = timedRefresh(7000);</script></body></html>\')'
