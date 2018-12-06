@@ -10,7 +10,7 @@ var reload = '<script>console.log(\'ola\');function timedRefresh(timeoutPeriod) 
 function arranque() {
     console.log('arranque inicio')
     $.ajax({
-        url: `https://mcupacademy.herokuapp.com/api/shelves`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/prateleirasHTML/getall`,
         method: 'get',
         success: function (response) {
             console.log('shelves');
@@ -27,7 +27,8 @@ function arranque() {
 function arranque2() {
     console.log('arranque1 inicio')
     $.ajax({
-        url: `https://mcupacademy.herokuapp.com/api/Products`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/produtosHTML/getall`,
+     
         method: 'get',
         success: function (response1) {
             console.log('products');
@@ -44,7 +45,7 @@ function arranque2() {
 // ------------------funcoes de arranque para fazer GET-------------------funcoes de arranque para fazer GET-----------------------------funcoes de arranque para fazer GET-------------------
 // ------------------constructores de productos e prateleiras----------// ------------------constructores de productos e prateleiras----------// ------------------constructores de productos e prateleiras----------
 class Product {
-    constructor(discountValue, iva, pvp, id) {
+    constructor(pvp, discountValue, iva,  id) {
         this.discountValue = discountValue;
         this.iva = iva;
         this.pvp = pvp;
@@ -54,11 +55,11 @@ class Product {
 }
 
 class Shelf {
-    constructor(capacity, rentPrice, id, productId) {
-        this.capacity = capacity;
-        this.rentPrice = rentPrice;
+    constructor(capacity, rentPrice, id,  productId) {
+        this.Capacity = capacity;
+        this.RentPrice = rentPrice;
         this.id = id;
-        this.productId = productId;
+        this.productID = productId;
     }
 };
 arranque2();
@@ -72,7 +73,7 @@ function makeProducts(response1) {
         this.iva = response1[index].iva;
         this.pvp = response1[index].pvp;
         this.id = response1[index].id;
-        var product = new Product(discountValue, iva, pvp, id);
+        var product = new Product(pvp, discountValue, iva,  id);
         products.push(product);
     } console.log(product);
     console.log(product);
@@ -105,10 +106,10 @@ function tableShelves() {
     $(".table").remove();
     $("body:last-child").append(cabShe1 + cabShe);
     for (let index = 0; index < shelves.length; index++) {
-        this.capacity = shelves[index].capacity;
-        this.rentPrice = shelves[index].rentPrice;
+        this.capacity = shelves[index].Capacity;
+        this.rentPrice = shelves[index].RentPrice;
         this.id = shelves[index].id;
-        this.productId = shelves[index].productId;
+        this.productId = shelves[index].ProductId;
 
         $("tbody:last-child").append('<tr><td id="idShelf' + index + '">' + id + '</td><td>' + capacity + '</td><td>' + rentPrice + '</td><td>' + productId + '</td><td><button class="btn btn-danger" onclick="deleteShelf(' + id + ')">&times;</button></td></tr>');
 
@@ -124,9 +125,9 @@ function tableProducts() {
     $("body:last-child").append(cabProd1 + cabProd);
 
     for (let index = 0; index < products.length; index++) {
-        this.discountValue = products[index].discountValue;
-        this.iva = products[index].iva;
-        this.pvp = products[index].pvp;
+        this.discountValue = products[index].DiscountValue;
+        this.iva = products[index].IVA;
+        this.pvp = products[index].PVP;
         this.id = products[index].id;
         // rows dos products
         $("tbody:last-child").append('<tr><td id="idProduct' + index + '">' + id + '</td><td>' + discountValue + '</td><td>' + iva + '</td><td>' + pvp + '</td><td><button class="btn btn-danger" onclick="deleteProduct(' + id + ')">&times;</button></td></tr>');
@@ -149,7 +150,7 @@ var cabProd = '<tr><th>ID</th><th>Discount Value</th> <th>IVA</th> <th>PVP</th> 
 
 var Pcap = '<input type="text" placeholder="capacity" name="capacity" value="99" id="capacity">'
 var PrentPrice = '<input type="number" placeholder="rentPrice" name="rentPrice" value="99" id="rentPrice">'
-var PprodID = '<input type="number" placeholder="productId" value="99" name="productId" id="productId">'
+var PprodID = '<input  placeholder="productId" value="99" name="productId" id="productId">'
 var Sbtn = '<button onclick="postShelf()"><strong>POST Shelf</strong></button>'
 
 var delAllShelvesBtn = '<button class="btn btn-warning" onclick="deleteAllShelves()"><strong>Delete ALL Shelves</strong></button>'
@@ -178,8 +179,8 @@ function postProduct() {
         var discount = document.getElementById("discount").value;
         var iva = document.getElementById("iva").value;
         var pvp = document.getElementById("pvp").value;
-        var id = 0;
-        var posta = new Product(discount, iva, pvp);
+        // var id = 0;
+        var posta = new Product( pvp, discount, iva);
         console.log('post definido por input');
     } else {
         var posta = new Product(80085, 80085, 80085)
@@ -189,7 +190,8 @@ function postProduct() {
     console.log(posta);
     $.ajax({
         type: "POST",
-        url: `https://mcupacademy.herokuapp.com/api/Products`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/produtosHTML/post`,
+        crossDomain: true,
         data: posta,
         dataType: 'application/json',
         success: function (response) {
@@ -208,7 +210,7 @@ function postProduct() {
 
 
     console.log('postProduct fim')
-    timedRefresh(1000);
+    // timedRefresh(1000);
 
 };
 function postShelf() {
@@ -228,7 +230,7 @@ function postShelf() {
     console.log(posta);
     $.ajax({
         type: "POST",
-        url: `https://mcupacademy.herokuapp.com/api/Shelves`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/prateleirasHTML/post`,
         data: posta,
         dataType: 'application/json',
         success: function (response) {
@@ -245,7 +247,7 @@ function postShelf() {
     
 
     console.log('postShelf fim')
-    timedRefresh(1000);
+    // timedRefresh(1000);
 };
 // --------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------apaga tudo---------------
 
@@ -256,7 +258,7 @@ function deleteAllShelves() {
         deleteShelf(x);
     }
 
-    timedRefresh(1000);
+    // timedRefresh(1000);
 };
 
 function deleteAllProducts() {
@@ -265,7 +267,7 @@ function deleteAllProducts() {
         var x = products[index].id
         deleteProduct(x);
     };
-    timedRefresh(1000);
+    // timedRefresh(1000);
 };
 
 
@@ -276,7 +278,8 @@ function deleteShelf(id) {
     console.log("APAGAR ID " + x);
     $.ajax({
         type: "DELETE",
-        url: `https://mcupacademy.herokuapp.com/api/Shelves/${x}`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/prateleirasHTML/delete/${x}`,
+        
         // data: posta,
         dataType: 'application/json',
         success: function (response) {
@@ -289,7 +292,7 @@ function deleteShelf(id) {
             console.log('ERRO');
         }
     });
-    timedRefresh(1000);
+    // timedRefresh(1000);
 };
 // apaga product por id------------------------------------apaga product por id------------------------------------apaga product por id------------------------------------apaga product por id------------------------------------
 function deleteProduct(x) {
@@ -299,7 +302,7 @@ function deleteProduct(x) {
 
     $.ajax({
         type: "DELETE",
-        url: `https://mcupacademy.herokuapp.com/api/Products/${x}`,
+        url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/produtosHTML/delete/${x}`,
         // data: posta,
         dataType: 'application/json',
         success: function (response) {
@@ -312,7 +315,7 @@ function deleteProduct(x) {
             console.log('ERRO');
         }
     });
-    timedRefresh(1000);
+    // timedRefresh(1000);
 
 };
 // faz refresh à pagina--------------faz refresh à pagina--------------faz refresh à pagina--------------faz refresh à pagina--------------faz refresh à pagina--------------
