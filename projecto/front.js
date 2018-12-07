@@ -46,9 +46,9 @@ function arranque2() {
 // ------------------constructores de productos e prateleiras----------// ------------------constructores de productos e prateleiras----------// ------------------constructores de productos e prateleiras----------
 class Product {
     constructor(pvp, discountValue, iva,  id) {
+        this.pvp = pvp;
         this.discountValue = discountValue;
         this.iva = iva;
-        this.pvp = pvp;
         this.id = id;
     }
 
@@ -69,13 +69,13 @@ arranque();
 function makeProducts(response1) {
     console.log('makeProduct inicio')
     for (let index = 0; index < response1.length; index++) {
+        this.pvp = response1[index].pvp;
         this.discountValue = response1[index].discountValue;
         this.iva = response1[index].iva;
-        this.pvp = response1[index].pvp;
         this.id = response1[index].id;
         var product = new Product(pvp, discountValue, iva,  id);
         products.push(product);
-    } console.log(product);
+    } 
     console.log(product);
 
     console.log('makeProduct fim')
@@ -125,9 +125,9 @@ function tableProducts() {
     $("body:last-child").append(cabProd1 + cabProd);
 
     for (let index = 0; index < products.length; index++) {
-        this.discountValue = products[index].DiscountValue;
-        this.iva = products[index].IVA;
-        this.pvp = products[index].PVP;
+        this.discountValue = products[index].discountValue;
+        this.iva = products[index].iva;
+        this.pvp = products[index].pvp;
         this.id = products[index].id;
         // rows dos products
         $("tbody:last-child").append('<tr><td id="idProduct' + index + '">' + id + '</td><td>' + discountValue + '</td><td>' + iva + '</td><td>' + pvp + '</td><td><button class="btn btn-danger" onclick="deleteProduct(' + id + ')">&times;</button></td></tr>');
@@ -175,10 +175,11 @@ var cabShe = '<tr><th>ID</th><th>Capacity</th> <th>Rent Price</th> <th>Product I
 function postProduct() {
     console.log('postProduct inicio')
     if (document.getElementById("discount") !== null) {
+        
+        var pvp = document.getElementById("pvp").value;
 
         var discount = document.getElementById("discount").value;
         var iva = document.getElementById("iva").value;
-        var pvp = document.getElementById("pvp").value;
         // var id = 0;
         var posta = new Product( pvp, discount, iva);
         console.log('post definido por input');
@@ -188,12 +189,25 @@ function postProduct() {
     }
 
     console.log(posta);
+    // $.post( "http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/produtosHTML/post", {
+    //     "discountValue": 211,
+    //     "iva": 999,
+    //     "pvp": 222,
+    //     "id": 1
+    // } )
     $.ajax({
         type: "POST",
         url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/produtosHTML/post`,
-        crossDomain: true,
-        data: posta,
-        dataType: 'application/json',
+        headers: {   
+                'Accept': 'application/json',
+             'Content-Type': 'application/json',
+             'Access-Control-Allow-Origin': '*',
+             'Access-Control-Allow-Methods':'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+             'Access-Control-Allow-Headers':'Origin, Content-Type, X-Auth-Token' 
+         },
+        data: JSON.stringify( posta),
+      
+       
         success: function (response) {
 
             console.log(response);
@@ -209,7 +223,7 @@ function postProduct() {
     });
 
 
-    console.log('postProduct fim')
+   
     // timedRefresh(1000);
 
 };
@@ -231,7 +245,14 @@ function postShelf() {
     $.ajax({
         type: "POST",
         url: `http://localhost:8080/qwerty-0.0.1-SNAPSHOT/api/prateleirasHTML/post`,
-        data: posta,
+        headers: {   
+            'Accept': 'application/json',
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin': '*',
+         'Access-Control-Allow-Methods':'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+         'Access-Control-Allow-Headers':'Origin, Content-Type, X-Auth-Token' 
+     },
+        data: JSON.stringify( posta),
         dataType: 'application/json',
         success: function (response) {
 
